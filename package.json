@@ -31,6 +31,6 @@
   },
   "scripts": {
     "start": "node vo0doo.js",
-    "postinstall": "bash bin/cloudinary.sh && bash bin/aws-s3.sh && bash bin/themes.sh"
+    "postinstall": "bash bin/cloudinary.sh && bash bin/timeweb-s3.sh && bash bin/themes.sh"
   }
 }
