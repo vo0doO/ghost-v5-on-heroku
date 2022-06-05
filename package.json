@@ -24,7 +24,7 @@
   "dependencies": {
     "casper": "github:TryGhost/Casper#main",
     "ghost": "^5.2.2",
-    "ghost-storage-adapter-s3": "^2.8.0",
+    "ghost-timeweb-storage-adapter-s3": "github:vo0doo/ghost-timeweb-storage-adapter-s3#master",
     "ghost-storage-cloudinary": "^2.2.1",
     "lyra": "github:TryGhost/lyra#main",
     "mysql": "^2.18.1"
