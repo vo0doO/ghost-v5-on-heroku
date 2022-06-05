@@ -1,0 +1,42 @@
+{
+  "name": "Развертывание Ghost V5 на Heroku",
+  "description": "Развертывание последней версии Ghost V5 на Heroku",
+  "logo": "https://ghost.org/favicon.ico",
+  "repository": "https://github.com/vo0doo/ghost-v5-on-heroku",
+  "scripts": {
+    "postdeploy": "bin/init-deployment"
+  },
+  "success_url": "/ghost",
+  "addons": ["jawsdb-maria", "mailgun", "cloudinary"],
+  "env": {
+    "APP_PUBLIC_URL": {
+      "description": "Complete URL of your app including https (You can change it later in Config Vars)",
+      "value": "https://ghostis.herokuapp.com"
+    },
+    "S3_ACCESS_KEY_ID": {
+      "description": "(Optional) Set your AWS Access Key ID to enable S3 file storage. Defaults to Cloudinary storage",
+      "required": false,
+      "value": "cf33522"
+    },
+    "S3_ACCESS_SECRET_KEY": {
+      "description": "AWS Access Secret Key, if using S3 file storage.",
+      "required": false,
+      "value": "sycd-6svgvvqewudsnlsuxysaywyyaf1"
+    },
+    "S3_BUCKET_NAME": {
+      "description": "Name of your S3 bucket on AWS, if using S3 file storage.",
+      "required": false,
+      "value": "cf33522-805b4cab-f7bc-4a33-87fe-7d81eca50810"
+    },
+    "S3_BUCKET_REGION": {
+      "description": "Region of your S3 bucket on AWS, if using S3 file storage.",
+      "required": false,
+      "value": "ru-1"
+    },
+    "S3_ASSET_HOST_URL": {
+      "description": "Optional custom CDN asset host url, if using S3 file storage.",
+      "required": false,
+      "value": "https://s3.timeweb.com/"
+    }
+  }
+}

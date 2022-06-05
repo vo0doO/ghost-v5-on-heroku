@@ -1,0 +1,36 @@
+{
+  "name": "ghost-v5-on-heroku",
+  "version": "4.44.0",
+  "description": "Deploy latest ghost v5 on Heroku",
+  "main": "vo0doo.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vo0doo/ghost-v5-on-heroku.git"
+  },
+  "keywords": [
+    "ghost",
+    "ghost v5",
+    "heroku"
+  ],
+  "author": "vo0doo <hi@vo0doo.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vo0doo/ghost-v5-on-heroku/issues"
+  },
+  "homepage": "https://github.com/vo0doo/ghost-v5-on-heroku#readme",
+  "engines": {
+    "node": "14.X"
+  },
+  "dependencies": {
+    "casper": "github:TryGhost/Casper#main",
+    "ghost": "^5.2.2",
+    "ghost-storage-adapter-s3": "^2.8.0",
+    "ghost-storage-cloudinary": "^2.2.1",
+    "lyra": "github:TryGhost/lyra#main",
+    "mysql": "^2.18.1"
+  },
+  "scripts": {
+    "start": "node vo0doo.js",
+    "postinstall": "bash bin/cloudinary.sh && bash bin/aws-s3.sh && bash bin/themes.sh"
+  }
+}
