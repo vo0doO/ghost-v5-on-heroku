@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
 
-echo "Инициализация развертывания…";
-echo "pwd →";
-pwd;
-echo "config.production.json →";
-cat "config.production.json";
-cd node_modules/ghost/;
-node ../commone/git-pull.js;
-bin/wait-for-db;
-knex-migrator init --mgpath node_modules/ghost;
+echo "Инициализация развертывания…"
+echo "pwd →"
+pwd
+echo "config.production.json →"
+cat "config.production.json"
+
+bin/wait-for-db
+knex-migrator init --mgpath node_modules/ghost
