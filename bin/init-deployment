@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo "Initializing the deployment…"
+echo "Инициализация развертывания…"
 echo "pwd →"
 pwd
 echo "config.production.json →"

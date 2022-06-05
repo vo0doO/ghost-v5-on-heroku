@@ -1,4 +1,4 @@
-# [Ghost 4.X](https://github.com/TryGhost/Ghost) on [Heroku](https://heroku.com)
+# [Ghost 5.X](https://github.com/TryGhost/Ghost) on [Heroku](https://heroku.com)
 > Извещение: Если вы получаете ошибку политики Heroku, пожалуйста, обратитесь к этому [discussion](https://github.com/vo0doo/ghost-v5-on-heroku/discussions/24).
 
 Ghost – самая популярная в мире современная издательская платформа для создания новой медиа-платформы. Он использовался Apple, SkyNews, Buffer, OpenAI и тысячами других.

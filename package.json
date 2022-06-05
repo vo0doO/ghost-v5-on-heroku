@@ -1,7 +1,7 @@
 {
   "name": "ghost-v5-on-heroku",
   "version": "4.44.0",
-  "description": "Deploy latest ghost v5 on Heroku",
+  "description": "Развертывание последней версии ghost v5 на Heroku",
   "main": "vo0doo.js",
   "repository": {
     "type": "git",

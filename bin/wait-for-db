@@ -3,17 +3,17 @@
 var mysql      = require('mysql');
 var envValues  = require('./common/env-values');
 
-console.error(`Awaiting MySQL database…`);
+console.error(`Ожидающая база данных MySQL…`);
 pingDatabaseUntilConnected();
 
 function pingDatabaseUntilConnected() {
   var connection = mysql.createConnection(envValues.mysqlDatabaseUrl);
   connection.query('SELECT 1', function (error, results, fields) {
     if (error) {
-      console.error(`Database not yet available: ${error.message}`);
+      console.error(`База данных пока недоступна: ${error.message}`);
       setTimeout(pingDatabaseUntilConnected, 5000);
     } else {
-      console.error('Database connected.');
+      console.error('Подключенная база данных.');
       connection.end();
       process.exit(0);
     }
