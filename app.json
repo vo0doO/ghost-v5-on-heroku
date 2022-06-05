@@ -41,12 +41,10 @@
     "MAILGUN_SMTP_LOGIN": {
       "description": "Login on mailgun.",
       "required": false,
-      "value": "https://s3.timeweb.com/"
     },
     "MAILGUN_SMTP_PASSWORD": {
       "description": "Password on mailgun.",
       "required": false,
-      "value": "https://s3.timeweb.com/"
     }
   }
 }
