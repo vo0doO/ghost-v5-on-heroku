@@ -19,18 +19,19 @@
   },
   "homepage": "https://github.com/vo0doo/ghost-v5-on-heroku#readme",
   "engines": {
-    "node": "14.X"
+    "node": "16.X"
   },
   "dependencies": {
     "casper": "github:TryGhost/Casper#main",
+    "dotenv": "^16.0.1",
     "ghost": "^5.2.2",
-    "ghost-timeweb-storage-adapter-s3": "github:vo0doo/ghost-timeweb-storage-adapter-s3#master",
     "ghost-storage-cloudinary": "^2.2.1",
+    "ghost-timeweb-storage-adapter-s3": "github:vo0doo/ghost-timeweb-storage-adapter-s3#master",
     "lyra": "github:TryGhost/lyra#main",
     "mysql": "^2.18.1"
   },
   "scripts": {
     "start": "node vo0doo.js",
-    "postinstall": "bash bin/cloudinary.sh && bash bin/timeweb-s3.sh && bash bin/themes.sh"
+    "postinstall": "bash bin/timeweb-s3.sh && bash bin/themes.sh"
   }
 }
