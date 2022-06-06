@@ -1,2 +1,1 @@
-
 var ghost = require("ghost");
