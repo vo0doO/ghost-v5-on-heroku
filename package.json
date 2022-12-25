@@ -25,7 +25,7 @@
     "casper": "github:TryGhost/Casper#main",
     "dotenv": "^16.0.1",
     "ghost": "*",
-    "ghost-storage-cloudinary": "^2.2.1",
+    "ghost-storage-cloudinary": "^2.2.5",
     "ghost-timeweb-storage-adapter-s3": "github:vo0doo/ghost-timeweb-storage-adapter-s3",
     "lyra": "github:TryGhost/lyra#main",
     "mysql": "^2.18.1",
