@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "casper": "github:TryGhost/Casper#main",
-    "dotenv": "^16.0.1",
+    "dotenv": "^16.0.3",
     "ghost": "*",
     "ghost-storage-cloudinary": "^2.2.1",
     "ghost-timeweb-storage-adapter-s3": "github:vo0doo/ghost-timeweb-storage-adapter-s3",
