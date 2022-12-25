@@ -1,7 +1,8 @@
-import AWS from 'aws-sdk'
-import BaseStore from 'ghost-storage-base'
-import { join } from 'path'
-import { readFile } from 'fs'
+const AWS = require('aws-sdk')
+const BaseStore = require('ghost-storage-base')
+const { join } = require('path')
+const { readFile } = require('fs')
+require('dotenv').config('.env')
 
 const readFileAsync = fp => new Promise((resolve, reject) => readFile(fp, (err, data) => err ? reject(err) : resolve(data)))
 const stripLeadingSlash = s => s.indexOf('/') === 0 ? s.substring(1) : s
@@ -13,7 +14,7 @@ class Store extends BaseStore {
 
     const {
       accessKeyId,
-      assetHost,
+      // assetHost,
       bucket,
       pathPrefix,
       region,
@@ -33,7 +34,7 @@ class Store extends BaseStore {
     this.bucket = process.env.GHOST_STORAGE_ADAPTER_S3_PATH_BUCKET || bucket
 
     // Дополнительные конфигурации
-    this.host = process.env.GHOST_STORAGE_ADAPTER_S3_ASSET_HOST || assetHost || `https://s3.timeweb.com/${this.bucket}`
+    this.host = `https://s3.timeweb.com/`
     this.pathPrefix = stripLeadingSlash(process.env.GHOST_STORAGE_ADAPTER_S3_PATH_PREFIX || pathPrefix || '')
     this.endpoint = process.env.GHOST_STORAGE_ADAPTER_S3_ENDPOINT || endpoint || ''
     this.serverSideEncryption = process.env.GHOST_STORAGE_ADAPTER_S3_SSE || serverSideEncryption || ''

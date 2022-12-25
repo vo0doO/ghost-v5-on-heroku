@@ -1,0 +1,26 @@
+{
+    // Используйте IntelliSense, чтобы узнать о возможных атрибутах.
+    // Наведите указатель мыши, чтобы просмотреть описания существующих атрибутов.
+    // Для получения дополнительной информации посетите: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "name": "Nodemon[timeweb-vo0doo.js]",
+            "program": "npx nodemon {workspaceFolder}/src/timeweb-vo0doo.js",
+            "request": "launch",
+            "restart": true,
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node"
+        },
+        {
+            "command": "npm run build",
+            "name": "Run npm build",
+            "request": "launch",
+            "type": "node-terminal"
+        }
+    ]
+}

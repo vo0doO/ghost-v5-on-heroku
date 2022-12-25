@@ -1,19 +1,19 @@
-# Ghost storage adapter S3
+# Адаптер хранилища Ghost TimeWeb
 
-An AWS S3 storage adapter for Ghost 1.x
+Адаптер хранилища TimeWeb S3 для Ghost 5.x
 
-For Ghost 0.10.x and 0.11.x support check out
+Для получения поддержки Ghost 0.10.x и 0.11.x см.
 [Ghost storage adapter s3 v1.3.0](https://github.com/vo0doo/ghost-timeweb-storage-adapter-s3/releases/tag/v1.3.0).
 
-## Installation
+## Монтаж
 
 ```shell
-npm install ghost-storage-adapter-s3
+npm install ghost-timeweb-storage-adapter-s3
 mkdir -p ./content/adapters/storage
-cp -r ./node_modules/ghost-storage-adapter-s3 ./content/adapters/storage/s3
+cp -r ./node_modules/ghost-timeweb-storage-adapter-s3 ./content/adapters/storage/s3
 ```
 
-## Configuration
+## Конфигурация
 
 ```json
 "storage": {
@@ -33,17 +33,17 @@ cp -r ./node_modules/ghost-storage-adapter-s3 ./content/adapters/storage/s3
   }
 }
 ```
-Note 1: Be sure to include "//" or the appropriate protocol within your assetHost string/variable to ensure that your site's domain is not prepended to the CDN URL.
+Примечание 1. Не забудьте указать «//» или соответствующий протокол в строке / переменной assetsHost, чтобы убедиться, что домен вашего сайта не добавлен в начало URL-адреса CDN.
 
-Note 2: if your s3 bucket enforces SSE use serverSideEncryption with the [appropriate supported](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#putObject-property) value.
+Примечание 2: если ваша корзина s3 применяет SSE, используйте serverSideEncryption с [соответствующим поддерживаемым] (https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#putObject-property) значением.
 
-Note 3: if your s3 providers requires path style you can enable it with `forcePathStyle`
+Примечание 3: если вашим провайдерам s3 требуется стиль пути, вы можете включить его с помощью `forcePathStyle`
 
-Note 4: if you use CloudFront the object ACL does not need to be set to "public-read"
+Примечание 4: если вы используете CloudFront, объектный ACL не нужно устанавливать на «общедоступное чтение».
 
 Note 5: [Support for AWS4-HMAC-SHA256](https://github.com/vo0doo/ghost-timeweb-storage-adapter-s3/issues/43)
 
-### Via environment variables
+### Через переменные среды
 
 ```
 AWS_ACCESS_KEY_ID
@@ -58,29 +58,28 @@ GHOST_STORAGE_ADAPTER_S3_FORCE_PATH_STYLE // optional
 GHOST_STORAGE_ADAPTER_S3_ACL // optional
 ```
 
-## AWS Configuration
-You'll likely want to configure a separate S3 bucket for your blog, a specific IAM role, and, optionally, CloudFront, to serve from a CDN.
+## Конфигурация AWS
+Скорее всего, вы захотите настроить отдельную корзину S3 для своего блога, определенную роль IAM и, при необходимости, CloudFront для обслуживания из CDN.
 
 ### S3
-Create a new bucket. If you're using a CDN, the region isn't important. Once the bucket is created, select Static website hosting from the properties, and configure it to host a website.
+Создайте новое ведро. Если вы используете CDN, регион не важен. После создания корзины выберите Статический хостинг веб-сайтов в свойствах и настройте ее для размещения веб-сайта.
 
-In the permissions, select Bucket Policy and use the policy generator with the folowing settings:
-- Select Type of Policy: **S3 Bucket Policy**
-- Effect: **Allow**
-- Principal: *
-- AWS Service: **Amazon S3**
-- Actions: **GetBucket**
-- Amazon Resource Name (ARN): *your bucket's ARN, which you can get on its Bucket Policy page*
+В разрешениях выберите Bucket Policy и используйте генератор политик со следующими настройками:
+– Выберите тип политики: **Политика корзины S3**.
+- Эффект: **Разрешить**
+- Главный: *
+– Сервис AWS: **Amazon S3**
+- Действия: **Получить ведро**
+- Имя ресурса Amazon (ARN): *ARN вашей корзины, который вы можете получить на странице политики корзины*
 
-Generate the policy, copy it, then paste it in the Bucket policy editor and save.
+Создайте политику, скопируйте ее, затем вставьте в редактор политики Bucket и сохраните.
 
-### IAM
-You'll want to create a custom user role in IAM that just gives your Ghost installation the necessary permissions to manipulate objects in its S3 bucket.
+### Я
+Вы захотите создать пользовательскую роль в IAM, которая просто предоставит вашей установке Ghost необходимые разрешения для управления объектами в корзине S3.
 
-Go to IAM in your AWS console and add a new user. Give it a username specific to your blog, and select **Programmatic access** as the Access type.
+Перейдите в IAM в консоли AWS и добавьте нового пользователя. Дайте ему имя пользователя, относящееся к вашему блогу, и выберите **Программный доступ** в качестве типа доступа.
 
-Next, on the permissions page, select **Attach existing policies directly** and click to **Create policy**. For the policy click on the JSON editor and add the following policy. You'll want to replace where it says **ghost-bucket** with the name of your blog's S3 bucket.
-
+Затем на странице разрешений выберите **Прикрепить существующие политики напрямую** и нажмите **Создать политику**. Для политики щелкните редактор JSON и добавьте следующую политику. Вы можете заменить **призрачное ведро** названием корзины S3 вашего блога.
 ```
 {
     "Version": "2012-10-17",
@@ -107,29 +106,29 @@ Next, on the permissions page, select **Attach existing policies directly** and 
 }
 ```
 
-What this policy does is allow the user access to see the contents of the bucket (the first statement), and then manipulate the objects stored in the bucket (the second statement).
+Эта политика позволяет пользователю просматривать содержимое корзины (первый оператор), а затем управлять объектами, хранящимися в корзине (вторая инструкция).
 
-Finally, create the user and copy the **Access key** and **Secret access key**, these are what you'll use in your configuration.
+Наконец, создайте пользователя и скопируйте **Ключ доступа** и **Секретный ключ доступа**, которые вы будете использовать в своей конфигурации.
 
-At this point you could be done, but, optionally, you could put Amazon's CloudFront CDN in front of the bucket to speed things up.
+На этом вы можете закончить, но при желании вы можете разместить CDN Amazon CloudFront перед корзиной, чтобы ускорить процесс.
 
-### CloudFront
-CloudFront is a CDN that replicates objects in servers around the world so your blog's visitors will get your assets faster by using the server closest to them. It uses your S3 bucket as the "source of truth" that it populates its servers with.
+### Облачный фронт
+CloudFront — это CDN, которая копирует объекты на серверах по всему миру, чтобы посетители вашего блога быстрее получали ваши ресурсы, используя ближайший к ним сервер. Он использует вашу корзину S3 в качестве «источника правды», которым он наполняет свои серверы.
 
-Got to CloudFront in AWS and choose to **Create a Distribution**. On the next screen you'll want to leave everything the same, except change the following:
-- Origin Domain Name: **Set this to the Endpoint url listed in the Static website hosting panel in the S3 bucket configuration**
-- Viewer Protocol Policy: **Redirect HTTP to HTTPS**
-- Compress Objects Automatically: **Yes**
+Перейдите в CloudFront в AWS и выберите **Создать дистрибутив**. На следующем экране вы захотите оставить все как есть, за исключением следующих изменений:
+- Исходное доменное имя: **Укажите URL-адрес конечной точки, указанный на панели хостинга статического веб-сайта в конфигурации корзины S3**
+- Политика протокола просмотра: **Перенаправление с HTTP на HTTPS**
+- Автоматическое сжатие объектов: **Да**
 
-Then create the distribution.
+Затем создайте дистрибутив.
 
-Next you'll want to configure your domain name to point a subdomain at CloudFront so you can serve static content through the CDN. Click on the distribution you just created and go the General tab. In Alternate Domain Names, add a subdomain from your url to be the CDN. For instance, if your domain is *yourdomain.com*, do something like *cdn.yourdomain.com*.
+Затем вам нужно настроить имя домена, чтобы оно указывало на поддомен в CloudFront, чтобы вы могли обслуживать статический контент через CDN. Нажмите на только что созданный дистрибутив и перейдите на вкладку «Общие». В разделе «Альтернативные доменные имена» добавьте поддомен из своего URL-адреса в качестве CDN. Например, если ваш домен *yourdomain.com*, сделайте что-то вроде *cdn.yourdomain.com*.
 
-Next, you'll want to enable SSL. If you're already using Amazon's Route53 DNS service, you may already have an SSL certificate for your domain with a wildcard, if not, choose to create one for your subdomain. If you're using Route53 you can have them automatically add the proper entries to your DNS records for validation and have the certificate generated. If not, go through the alternate route.
+Далее вам нужно включить SSL. Если вы уже используете DNS-сервис Amazon Route53, возможно, у вас уже есть SSL-сертификат для вашего домена с подстановочным знаком, если нет, выберите его для своего субдомена. Если вы используете Route53, они могут автоматически добавлять правильные записи в ваши записи DNS для проверки и создания сертификата. Если нет, пройдите альтернативный маршрут.
 
-Next, configure the DNS entry for the subdomain for CloudFront. Go to your DNS configuration and add an A record for **cdn** (or whatever subdomain your chose), and then set it up as an alias that points at your CloudFront distribution URL. If you're using Route53 it will actually provide you with distribution as an option.
+Затем настройте запись DNS для поддомена для CloudFront. Перейдите к конфигурации DNS и добавьте запись A для **cdn** (или любого другого субдомена, который вы выбрали), а затем настройте его как псевдоним, указывающий на ваш URL-адрес распространения CloudFront. Если вы используете Route53, он фактически предоставит вам дистрибутив в качестве опции.
 
-Finally, in your configuration, use the subdomain for the CloudFront distribution as your setting for *assetHost*.
+Наконец, в вашей конфигурации используйте субдомен для раздачи CloudFront в качестве параметра для *assetHost*.
 
 ## License
 

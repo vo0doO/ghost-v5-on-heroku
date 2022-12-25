@@ -5,13 +5,11 @@ cache:
 notifications:
   email: false
 node_js:
-  - '6'
-  - '8'
-  - '10'
+  - '16.15.1'
 install:
   - yarn install --ignore-engines
 before_install:
-  - npm i -g npm@^2.0.0
+  - npm i -g npm@^8.11.0
 before_script:
   - npm prune
 script:

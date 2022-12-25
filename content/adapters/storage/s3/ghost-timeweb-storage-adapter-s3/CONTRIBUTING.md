@@ -1,97 +1,97 @@
-# Contributing
+# Участие
 
-Thank you for contributing! :star2:
+Спасибо за участие !
 
-By contributing to Ghost storage adapter S3, you agree to abide
-by the [code of conduct](./CODE_OF_CONDUCT.md).
+Внося свой вклад в адаптер хранения Ghost S3, вы соглашаетесь соблюдать
+по [кодексу поведения](./CODE_OF_CONDUCT.md).
 
-## Issues
+## Вопросы
 
-Please
-[open an issue](https://github.com/vo0doo/ghost-timeweb-storage-adapter-s3/issues/new)
-for discussion before you spend the time to submit a pull request.
+Пожалуйста
+[открыть вопрос](https://github.com/vo0doo/ghost-timeweb-storage-adapter-s3/issues/new)
+для обсуждения, прежде чем тратить время на отправку запроса на включение.
 
-## Development
+## Разработка
 
-### Project setup
+### Настройка проекта
 
-1. [Fork this repository](https://github.com/vo0doo/ghost-timeweb-storage-adapter-s3/fork)
-2. Clone your fork:
+1. [Разветвить этот репозиторий](https://github.com/vo0doo/ghost-timeweb-storage-adapter-s3/fork)
+2. Клонируйте свою вилку:
    `git clone git@github.com:your-username/ghost-storage-adapter-s3.git && cd ghost-storage-adapter-s3`
-3. Install the dependencies: `npm install`
+3. Установите зависимости: `npm install`
 
-You should now be able to use the npm scripts to carry
-out some useful tasks:
+Теперь вы сможете использовать сценарии npm для переноса
+несколько полезных задач:
 
-- `npm run build`
-- `npm run commit`
+- `npm запустить сборку`
+- `npm выполнить фиксацию`
 
-For a full list checkout the
-[`package.json` file](.package.json).
+Для получения полного списка оформите заказ
+[файл `package.json`](.package.json).
 
-### Creating a pull request
+### Создание запроса на извлечение
 
-Your master branch should be kept clean and you should
-create a new branch for each pull request.
+Ваша ветка master должна содержаться в чистоте, и вы должны
+создайте новую ветку для каждого запроса на включение.
 
-#### Set the upstream
-
-```
-git remote add upstream git@github.com:colinmeinke/ghost-storage-adapter-s3.git
-```
-
-#### Create a new branch
-
-`git checkout -b my-branch-name`
-
-#### Committing
-
-Once you've made your changes you'll need to commit.
-
-We use
-[semantic release](https://github.com/semantic-release/semantic-release)
-for releasing this module to npm, and generating changelogs.
-
-Semantic release relies upon commit message syntax,
-therefore commit messages are important.
-
-We use
-[Angular's commit message conventions](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#commit).
-
-Running `npm run commit` will guide you through the process.
-
-#### Fetch changes from master
+#### Установите восходящий поток
 
 ```
-git checkout master
-git pull upstream master
+git удаленное добавление вверх по течению git@github.com:colinmeinke/ghost-storage-adapter-s3.git
 ```
 
-#### Rebase your changes
+#### Создать новую ветку
+
+`git checkout -b имя-моей-ветки`
+
+#### Совершение
+
+После того, как вы внесли изменения, вам нужно зафиксировать их.
+
+Мы используем
+[семантический выпуск] (https://github.com/semantic-release/semantic-release)
+за выпуск этого модуля в npm и создание журналов изменений.
+
+Семантический релиз зависит от синтаксиса сообщения фиксации,
+поэтому сообщения фиксации важны.
+
+Мы используем
+[Соглашения о сообщениях фиксации Angular](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#commit).
+
+Запуск `npm run commit` проведет вас через весь процесс.
+
+#### Получить изменения от мастера
 
 ```
-git checkout my-branch-name
-git rebase master
+мастер проверки git
+git потянуть вверх по течению мастер
 ```
 
-#### Push your changes
+#### Перебазируйте ваши изменения
 
 ```
-git push -u origin my-branch-name
+git checkout имя моей ветки
+git мастер перебазирования
 ```
 
-#### Submit your pull request
+#### Отправьте свои изменения
 
-[Follow Github's instructions](https://help.github.com/articles/creating-a-pull-request/).
+```
+git push -u origin имя-моей-ветки
+```
 
-#### Keeping your pull request in sync
+#### Отправьте запрос на включение
 
-Sometimes new commits will be made to Ghost storage adapter
-S3 whilst you're waiting for your pull request to be merged.
+[Следуйте инструкциям Github](https://help.github.com/articles/creating-a-pull-request/).
 
-In this case your pull request will need some extra work
-so it can be cleanly merged.
+#### Синхронизация вашего запроса на извлечение
 
-1. [Fetch changes from master](#fetch-changes-from-master)
-2. [Rebase your changes](#rebase-your-changes)
-3. Force push (carefully!): `git push -f origin my-branch-name`
+Иногда новые коммиты будут сделаны для адаптера хранилища Ghost.
+S3, пока вы ожидаете слияния вашего запроса на извлечение.
+
+В этом случае ваш запрос на вытягивание потребует дополнительной работы.
+так что это может быть чисто объединено.
+
+1. [Получить изменения с мастера](#fetch-changes-from-master)
+2. [Перебазируйте свои изменения](#rebase-your-changes)
+3. Force push (осторожно!): `git push -f origin my-branch-name`
