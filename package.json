@@ -26,7 +26,7 @@
     "dotenv": "^16.0.1",
     "ghost": "^5.2.2",
     "ghost-storage-cloudinary": "^2.2.1",
-    "ghost-timeweb-storage-adapter-s3": "github:vo0doo/ghost-timeweb-storage-adapter-s3#master",
+    "ghost-timeweb-storage-adapter-s3": "github:vo0doo/ghost-timeweb-storage-adapter-s3#main",
     "lyra": "github:TryGhost/lyra#main",
     "mysql": "^2.18.1"
   },
