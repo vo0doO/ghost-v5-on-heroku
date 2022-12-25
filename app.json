@@ -1,4 +1,14 @@
 {
+  "environments": {
+    "test": {
+      "formation": {
+        "test": {
+          "quantity": 1,
+          "size": "standard-1x"
+        }
+      }
+    }
+  },
   "name": "Развертывание Ghost V5 на Heroku",
   "description": "Развертывание последней версии Ghost V5 на Heroku",
   "logo": "https://ghost.org/favicon.ico",
