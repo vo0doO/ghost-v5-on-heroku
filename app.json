@@ -17,7 +17,7 @@
     "postdeploy": "bin/init-deployment"
   },
   "success_url": "/ghost",
-  "addons": ["jawsdb-maria", "mailgun", "cloudinary"],
+  "addons": ["jawsdb-maria", "mailgun", "cloudinary", "papertrail"],
   "env": {
     "APP_PUBLIC_URL": {
       "description": "Complete URL of your app including https (You can change it later in Config Vars)",
