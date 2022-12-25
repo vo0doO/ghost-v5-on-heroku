@@ -1,0 +1,110 @@
+Arguments: 
+  /home/vo0u/.nvm/versions/node/v16.15.1/bin/node /home/vo0u/.nvm/versions/node/v16.15.1/bin/yarn run build-dev
+
+PATH: 
+  /home/vo0u/.nvm/versions/node/v16.15.1/bin:/home/vo0u/.nvm/versions/node/v16.15.1/bin:/home/vo0u/.local/bin:/home/vo0u/bin:/usr/local/bin:/home/vo0u/.vscode-server/bin/4af164ea3a06f701fe3e89a2bcbb421d2026b68f/bin/remote-cli:/home/vo0u/.nvm/versions/node/v16.15.1/bin:/home/vo0u/.local/bin:/home/vo0u/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Python310/Scripts/:/mnt/c/Python310/:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/nodejs/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/c/Users/vo0/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/vo0/AppData/Roaming/npm:/mnt/c/Users/vo0/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/vo0/AppData/Roaming/Code/User/globalStorage/ms-vscode-remote.remote-containers/cli-bin:/home/vo0u/.yarn/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.15.1
+
+Platform: 
+  linux x64
+
+Trace: 
+  SyntaxError: /home/vo0u/Projects/ghost-timeweb-storage-adapter-s3/package.json: Unexpected string in JSON at position 1808
+      at JSON.parse (<anonymous>)
+      at /home/vo0u/.nvm/versions/node/v16.15.1/lib/node_modules/yarn/lib/cli.js:1629:59
+      at Generator.next (<anonymous>)
+      at step (/home/vo0u/.nvm/versions/node/v16.15.1/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /home/vo0u/.nvm/versions/node/v16.15.1/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "author": {
+      "name": "vo0doo",
+      "email": "admin@stgrib.ru",
+      "url": "https://blog.vo.dedyn.io"
+    },
+    "babel": {
+      "plugins": [
+        "transform-object-rest-spread",
+        "add-module-exports"
+      ],
+      "presets": [
+        [
+          "env",
+          {
+            "targets": {
+              "node": "16.15.1"
+            }
+          }
+        ]
+      ]
+    },
+    "bugs": {
+      "url": "https://github.com/vo0doo/ghost-timeweb-storage-adapter-s3/issues"
+    },
+    "config": {
+      "commitizen": {
+        "path": "node_modules/cz-conventional-changelog"
+      }
+    },
+    "dependencies": {
+      "aws-sdk": "^2.1035.0",
+      "dotenv": "^16.0.1",
+      "ghost-storage-base": "0.0.1",
+      "rxjs": "^7.5.5"
+    },
+    "description": "An Timeweb S3 storage adapter for Ghost 0.10+",
+    "devDependencies": {
+      "@types/node": "^14.0.23",
+      "babel-cli": "^6.14.0",
+      "babel-plugin-add-module-exports": "^0.2.1",
+      "babel-plugin-transform-object-rest-spread": "^6.8.0",
+      "babel-preset-env": "^1.6.0",
+      "commitizen": "^2.8.6",
+      "cz-conventional-changelog": "^1.2.0",
+      "nodemon": "^2.0.16",
+      "semantic-release": "^15.9.9",
+      "snazzy": "^5.0.0",
+      "standard": "^8.3.0",
+      "travis-deploy-once": "^5.0.2"
+    },
+    "homepage": "https://github.com/vo0doo/ghost-timeweb-storage-adapter-s3#readme",
+    "license": "ISC",
+    "keywords": [
+      "adapter",
+      "aws",
+      "ghost",
+      "s3",
+      "storage"
+    ],
+    "main": "src/index.bundle.js",
+    "name": "ghost-timeweb-storage-adapter-s3",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/vo0doo/ghost-timeweb-storage-adapter-s3.git"
+    },
+    "scripts": {
+      "debug": "npx nodemon ./src/index.bundle.js",
+      "build-dev": "npx babel --watch ./src/index.js --out-file ./src/index.bundle.js",
+      "commit": "git-cz",
+      "check-style": "npm run fix | npm run "
+      "fix": "standard src/index.js --fix",
+      "lint": "standard src/index.js --verbose | snazzy src/index.js",
+      "prepublish": "npm run build",
+      "semantic-release": "semantic-release",
+      "test": "exit 0",
+      "travis-deploy-once": "travis-deploy-once"
+    },
+    "version": "0.0.0-development"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
