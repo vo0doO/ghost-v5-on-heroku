@@ -1,5 +1,5 @@
 {
-  "url": "http://localhost:2368",
+  "url": "https://ghostis-refactoring-fal-zzjz0v.herokuapp.com/",
   "server": {
     "port": 5000,
     "host": "0.0.0.0"
