@@ -1,7 +1,7 @@
 {
-  "url": "https://ghostis-refactoring-fal-zzjz0v.herokuapp.com/",
+  "url": "http://localhost:2368",
   "server": {
-    "port": 5000,
+    "port": 2368,
     "host": "0.0.0.0"
   },
   "database": {
